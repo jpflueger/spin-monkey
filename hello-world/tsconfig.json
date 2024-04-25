@@ -2,16 +2,15 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "noImplicitAny": true,
-        "module": "es6",
-        "target": "es2020",
-        "jsx": "react",
+        "module": "ES2020",
+        "target": "ES2021",
         "skipLibCheck": true,
         "lib": [
-            "ES2015"
+            "ES2021"
         ],
         "allowJs": true,
         "strict": true,
         "noImplicitReturns": true,
-        "moduleResolution": "node"
+        "moduleResolution": "Node"
     }
 }

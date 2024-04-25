@@ -7,7 +7,7 @@ name = "hello-world"
 version = "0.1.0"
 
 [[trigger.http]]
-route = "/..."
+route = "/webpack/..."
 component = "hello-world-webpack"
 
 [component.hello-world-webpack]
@@ -15,4 +15,15 @@ source = "dist/webpack/hello-world.wasm"
 exclude_files = ["**/node_modules"]
 [component.hello-world-webpack.build]
 command = "npm run build-webpack"
+watch = ["src/**/*.ts", "package.json"]
+
+[[trigger.http]]
+route = "/esbuild/..."
+component = "hello-world-esbuild"
+
+[component.hello-world-esbuild]
+source = "dist/esbuild/hello-world.wasm"
+exclude_files = ["**/node_modules"]
+[component.hello-world-esbuild.build]
+command = "npm run build-esbuild"
 watch = ["src/**/*.ts", "package.json"]
