@@ -8,11 +8,11 @@ version = "0.1.0"
 
 [[trigger.http]]
 route = "/..."
-component = "hello-world"
+component = "hello-world-webpack"
 
-[component.hello-world]
-source = "target/hello-world.wasm"
+[component.hello-world-webpack]
+source = "dist/webpack/hello-world.wasm"
 exclude_files = ["**/node_modules"]
-[component.hello-world.build]
-command = "npm run build"
+[component.hello-world-webpack.build]
+command = "npm run build-webpack"
 watch = ["src/**/*.ts", "package.json"]

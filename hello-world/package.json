@@ -4,20 +4,23 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "npx webpack --mode=production && npx mkdirp target && jco componentize dist.js --wit .wit -n spin-http -o target/hello-world.wasm",
+        "webpack": "npx mkdirp dist/webpack && npx webpack --mode=production",
+        "componentize-webpack": "jco componentize dist/webpack/index.js --wit .wit -n spin-http -o dist/webpack/hello-world.wasm",
+        "build-webpack": "run-s webpack componentize-webpack",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@bytecodealliance/componentize-js": "^0.8.3",
+        "@bytecodealliance/jco": "^1.1.1",
         "mkdirp": "^3.0.1",
+        "npm-run-all": "^4.1.5",
         "ts-loader": "^9.4.1",
         "typescript": "^4.8.4",
         "webpack": "^5.74.0",
-        "webpack-cli": "^4.10.0",
-        "@bytecodealliance/componentize-js": "^0.8.3",
-        "@bytecodealliance/jco": "^1.1.1"
+        "webpack-cli": "^4.10.0"
     },
     "dependencies": {
         "@fermyon/spin-sdk": "fermyon/spin-js-sdk#feat/sdk-v2"

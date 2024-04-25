@@ -19,7 +19,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './'),
-        filename: 'dist.js',
+        filename: './dist/webpack/index.js',
         module: true,
         library: {
             type: "module",
@@ -35,7 +35,6 @@ module.exports = {
         "fermyon:spin/postgres@2.0.0": "fermyon:spin/postgres@2.0.0",
         "fermyon:spin/mysql@2.0.0": "fermyon:spin/mysql@2.0.0",
         "fermyon:spin/mqtt@2.0.0": "fermyon:spin/mqtt@2.0.0"
-
     },
     optimization: {
         minimize: false
